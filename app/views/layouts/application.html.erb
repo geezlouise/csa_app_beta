@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CsaStoreApp</title>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Chelsea+Market|Varela+Round' rel='stylesheet' type='text/css" %>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="container-fluid">
+	      <ul class="nav navbar-nav">
+	        <li><%= link_to 'Home', farms_path %></li>
+	        <li><%= link_to 'New Farm', new_farm_path %></li>
+          <li><%= link_to 'New Box', new_box_path %></li>
+	        <!-- <li role="separator" class="divider"></li> -->
+          
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+	      </ul>     
+    </div>
+  </div>
+</nav>
+
+<%= yield %>
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>CSApp Logo</h3>
+        <ul class="footer-links-left list-unstyled">
+          <li><%= link_to 'Find a CSA' %></li>
+           <li><%= link_to 'Participating Farms' %></li>
+            <li><%= link_to 'About CSApp' %></li>
+             <li><%= link_to 'Frequently Asked Questions' %></li>
+        </ul>
+      </div>
+
+        <div class="col-md-4">
+          <h3>Are you a Farmer?</h3>
+       
+          <ul class="footer-links-left list-unstyled">
+            <li><%= link_to 'Register your Farm' %></li>
+             <li><%= link_to 'How it Works' %></li>
+              <li><%= link_to 'About CSApp' %></li>
+               <li><%= link_to 'Frequently Asked Questions for Farmers' %></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Stay in Touch</h3>
+          <h2 class="social-links"><a href="#" <i class="fa fa-facebook-square"></i></a> <a href="#"><i class="fa fa-twitter-square"></i></a> <a href="#"><i class="fa fa-share-square"></i></a></h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" %>
+</body>
+</html>

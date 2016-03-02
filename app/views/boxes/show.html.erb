@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @box.name %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @box.contents %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @box.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @box.price %>
+</p>
+
+<p>
+  <strong>Length of time:</strong>
+  <%= @box.length_of_time %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @box.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @box.end_date %>
+</p>
+
+<p>
+  <strong>Farm:</strong>
+  <%= @box.farm_id %>
+</p>
+
+<p>
+  <%= form_tag('/add_to_cart') do %>
+    <div class="cant-see-me">
+      <%= number_field_tag :box_id, @box.id %>
+    </div>
+    <%= number_field_tag :quantity, nil, placeholder: "Quantity" %><br />
+    <%= submit_tag "Purchase", class: "btn btn-danger" %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_box_path(@box) %> |
+<%= link_to 'Back', boxes_path %>

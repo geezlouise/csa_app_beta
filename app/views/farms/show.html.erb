@@ -1,0 +1,78 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @farm.image.url(:medium) %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @farm.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @farm.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @farm.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @farm.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @farm.zip %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @farm.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @farm.phone_number %>
+</p>
+
+<p>
+  <strong>Fb url:</strong>
+  <%= @farm.fb_url %>
+</p>
+
+<p>
+  <strong>Instagram url:</strong>
+  <%= @farm.instagram_url %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @farm.website %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @farm.bio %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @farm.owner %>
+</p>
+
+<p>
+  <strong>Video url:</strong>
+  <%= @farm.video_url %>
+</p>
+
+<p>
+  <strong>Practices followed:</strong>
+  <%= @farm.practices_followed %>
+</p>
+
+<%= link_to 'Edit', edit_farm_path(@farm) %> |
+<%= link_to 'Back', farms_path %>

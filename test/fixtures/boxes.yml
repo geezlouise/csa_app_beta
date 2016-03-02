@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  contents: MyString
+  description: MyText
+  price: 9.99
+  length_of_time: 1
+  start_date: 2016-02-25
+  end_date: 2016-02-25
+  farm_id: 1
+
+two:
+  name: MyString
+  contents: MyString
+  description: MyText
+  price: 9.99
+  length_of_time: 1
+  start_date: 2016-02-25
+  end_date: 2016-02-25
+  farm_id: 1

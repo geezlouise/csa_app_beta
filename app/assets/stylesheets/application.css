@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* RESET */
+
+a:hover{
+	text-decoration: none;
+}
+
+ol, ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+
+/* TYPOGRAPHY */
+
+h1, h2, h3, h4 {
+	font-family: 'Chelsea Market', cursive;
+}
+
+p {
+	font-size: 1.15em;
+	font-family: 'Varela Round', sans-serif;
+}
+
+/* GENERIC */
+
+.cant-see-me {
+	display: none;
+}
+
+.navbar {
+	margin-bottom: 0px !important;
+	background-color: #ff5c33;
+	padding: 10px 0 10px 0;
+	border: none;
+	border-radius: 0px;
+	font-weight: 700;
+	font-size: 1.5em;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+
+/* BUTTONS */
+/* ----------- */
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+}
+
+/*  FOOTER */
+footer {
+	background: #ff5c33;
+	color: #fff;
+	padding: 25px 0 35px 0;
+}
+
+footer a {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+footer a:hover {
+	color: rgba(255, 255, 255, 1);;
+}

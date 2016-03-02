@@ -1,0 +1,46 @@
+// Place all the styles related to the Farms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* SECTIONS */
+/* ----------- */
+
+/*  Hero */
+
+.hero-img-left, .hero-img-mid, .hero-img-right {
+	height: 430px;
+	position: relative;
+}
+
+.hero-img-left {
+	background: url('earth1.jpg');
+}
+
+.hero-img-mid {
+	background: url('veg1.jpg');
+}
+
+.hero-img-right {
+	background: url('community2.jpg');
+}
+
+.hero-content {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	color: #fff;
+	position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*  Home Action */
+.home-action {
+	text-align: center;
+	padding: 45px 0 45px 0;
+}
+
+/*  how it works */
+#explained {
+	background-color: #f5f5f5;
+	border-top: solid 18px #ff5c33;
+	padding: 30px 0 30px 0;
+}
