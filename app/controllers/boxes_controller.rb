@@ -8,7 +8,7 @@ class BoxesController < ApplicationController
 
     @search = Box.search(params[:q])
     @boxes = @search.result
-    
+
   end
 
   # GET /boxes/1
@@ -74,6 +74,6 @@ class BoxesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def box_params
-      params.require(:box).permit(:name, :contents, :description, :price, :length_of_time, :start_date, :end_date, :farm_id)
+      params.require(:box).permit(:name, :contents, :description, :price, :length_of_time, :start_date, :end_date, :farm_id, :pickup_location)
     end
 end
