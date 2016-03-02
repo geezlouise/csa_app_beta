@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'find_csa/all_boxes'
   get 'find_csa/all_farms'
   get 'find_csa/filter_search'

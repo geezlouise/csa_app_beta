@@ -1,2 +1,11 @@
-<h1>Cart#checkout</h1>
-<p>Find me in app/views/cart/checkout.html.erb</p>
+<h1>Thank you for finding your CSA with us!</h1>
+<p>This is an overview of your order<p>
+
+	<% @order.order_items.each do |key, value| %>
+		<ul>
+			<li><%= Box.find(key).name %> - <%= value %></li>
+		</ul>
+	<% end %>
+	<p>
+		<strong>Order Total: </strong><%= number_to_currency @order.grand_total %>
+	</p>
