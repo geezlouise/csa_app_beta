@@ -5,6 +5,10 @@ class BoxesController < ApplicationController
   # GET /boxes.json
   def index
     @boxes = Box.all
+
+    @search = Box.search(params[:q])
+    @boxes = @search.result
+    
   end
 
   # GET /boxes/1

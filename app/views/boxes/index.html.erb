@@ -1,22 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Boxes</h1>
+<section id="csasearch">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h1>Find a CSA!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Contents</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Length of time</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Farm</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <h3>You can search shares in the area by different requests.</h3>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-10">
+        <div class="form-group">
+          <%= search_form_for @search do |f| %>
+          <%= f.text_field :contents_cont, placeholder: "Content contains" %>
+          <%= f.text_field :price_gteq, placeholder: "Price between" %>
+          <%= f.text_field :price_lteq, placeholder: "and" %>
+          <%= f.submit "Search for CSA", class: "btn btn-default" %>
+          <% end %>
+        </div>
+       </div>
+    </div>
+  </div>
+</section>
 
+<section id="csa-results">
+<div class="container">
+  <div class="row">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Contents</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Length of time</th>
+          <th>Start date</th>
+          <th>End date</th>
+          <th>Farm</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    </div>
+
+<div class="row">
   <tbody>
     <% @boxes.each do |box| %>
       <tr>
@@ -35,6 +63,9 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
+</section>
 
 <br>
 
