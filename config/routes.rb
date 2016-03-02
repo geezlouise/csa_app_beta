@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'all_boxes' => 'find_csa#all_boxes'
   get 'all_farms' => 'find_csa#all_farms'
   get 'filter' => 'find_csa#filter_search'
+  post 'order_complete' => 'cart#order_complete'
 
   resources :orders
   resources :line_items
