@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'filter' => 'find_csa#filter_search'
   post 'order_complete' => 'cart#order_complete'
 
+  resources :boxes do
+    resource :like
+  end
+
   resources :orders
   resources :line_items
   devise_for :users
