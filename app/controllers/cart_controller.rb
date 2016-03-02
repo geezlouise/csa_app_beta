@@ -36,10 +36,10 @@ class CartController < ApplicationController
     @order.grand_total = sum + @order.sales_tax
     @order.save
 
-    @line_items.each do |line_item|
-      line_item.box.quantity -= line_item.quantity
-      line_item.box.save
-    end
+    # @line_items.each do |line_item|
+    #   line_item.box.quantity -= line_item.quantity
+    #   line_item.box.save
+    # end
 
     LineItem.destroy_all
   end
