@@ -5,7 +5,7 @@ class LikesController < ApplicationController
 	def create
 		@box.likes.where(user_id: current_user.id).first_or_create
 
-		respond to do |format|
+		respond_to do |format|
 			format.html { redirect_to request.referrer }
 		end
 	end
@@ -18,9 +18,20 @@ class LikesController < ApplicationController
 		end
 	end
 
+	def like
+		box = Like.new
+		box.save
+
+		redirect_to root_path
+	end
+
+	def view_likes
+		@likes = Like.all
+	end
+
 	private
 
 	def set_box
-		@box = Box.find(params[box_id])
+		@box = Box.find(params[:box_id])
 	end
 end

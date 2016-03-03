@@ -1,0 +1,28 @@
+<h1>View your favroite Shares</h1>
+
+<div class="container">
+	<div class="row">
+		<% @boxes.each do |box| %>
+		<div class="col-md-4">
+
+		<ul>
+			<li><%= @box.name %> from <%= @box.farm_id %></li>
+			<li><%= @box.length_of_time %> weeks long<li>
+			<li>$<%= @box.price %> per season</li>
+			<li>Feeds <%= @box.size %> household members</li>
+			<li>Located in: <%= @farm.city %></li>
+			<li><strong>Expected Contents:</strong> <%= @box.contents %></li>
+		</ul>
+
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<% @like.like_box.each do |key, value| %>
+	<ul>
+		<li><%= Box.find(key).name %> - <%= value %></li>
+	</ul>
+<% end %>
+
+<p>If you know which share you want to sign up for, look up the contact information abou that farm! Thanks for using the CSA App!</p>

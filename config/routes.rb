@@ -11,8 +11,11 @@ Rails.application.routes.draw do
   get 'filter' => 'find_csa#filter_search'
   post 'order_complete' => 'cart#order_complete'
 
+  post 'like' => 'shared#view_likes'
+  get 'view_likes' => 'shared#view_likes'
+
   resources :boxes do
-    resource :like
+  resource :like
   end
 
   resources :orders
