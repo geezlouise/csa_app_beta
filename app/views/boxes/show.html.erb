@@ -37,7 +37,7 @@
 
 <p>
   <strong>Farm:</strong>
-  <%= @box.farm_id %>
+  <%= @box.farm.name %>
 </p>
 
 <%= render 'shared/likes' %>
@@ -47,8 +47,8 @@
     <div class="cant-see-me">
       <%= number_field_tag :box_id, @box.id %>
     </div>
-    <%= number_field_tag :quantity, nil, placeholder: "Quantity" %><br />
-    <%= submit_tag "Purchase", class: "btn btn-danger" %>
+   
+    <%= submit_tag "Add To Favorite", class: "btn btn-info" %>
   <% end %>
 </p>
 

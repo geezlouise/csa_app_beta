@@ -1,54 +1,37 @@
+<div class="container">
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Farms</h1>
+<h1>Farms Love</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Email</th>
-      <th>Phone number</th>
-      <th>Fb url</th>
-      <th>Instagram url</th>
-      <th>Website</th>
-      <th>Bio</th>
-      <th>Owner</th>
-      <th>Video url</th>
-      <th>Practices followed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @farms.each do |farm| %>
-      <tr>
-        <td><%= image_tag farm.image.url(:thumb) %></td>
-        <td><%= farm.name %></td>
-        <td><%= farm.address %></td>
-        <td><%= farm.city %></td>
-        <td><%= farm.state %></td>
-        <td><%= farm.zip %></td>
-        <td><%= farm.email %></td>
-        <td><%= farm.phone_number %></td>
-        <td><%= farm.fb_url %></td>
-        <td><%= farm.instagram_url %></td>
-        <td><%= farm.website %></td>
-        <td><%= farm.bio %></td>
-        <td><%= farm.owner %></td>
-        <td><%= farm.video_url %></td>
-        <td><%= farm.practices_followed %></td>
-        <td><%= link_to 'Show', farm %></td>
-        <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
-        <td><%= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="row">
+  <% @farms.each do |farm| %>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div style="width: 100%;">
+            <%= image_tag farm.image.url(), class: "img-responsive" %>
+          </div>
+          <br>
+          <h1><%= farm.name %></h1>
+          <h4>Address: <%= farm.address %><br><%= farm.city %>, <%= farm.state %> <%= farm.zip %></h4><br>
+          <h4>Contact: <%= farm.phone_number %> | <%= farm.email %> </h4>
+          <h4>Social: <%= farm.fb_url %> | <%= farm.instagram_url %> | <%= farm.website %> </h4>
+          <br>
+
+          <p><%= farm.owner %><strong></strong><%= farm.bio %></p>
+          <p><strong>We Practice:</strong> <%= farm.practices_followed %></p>
+          <hr>
+          <%= link_to 'View Profile', farm %> | <%= link_to 'Edit', edit_farm_path(farm) %> | <%= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
+  </div>
 <br>
 
 <%= link_to 'New Farm', new_farm_path %>
+
+</div>
+

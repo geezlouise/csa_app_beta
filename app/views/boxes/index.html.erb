@@ -5,7 +5,6 @@
     <div class="row">
       <div class="col-md-10">
         <h1>Find a CSA!</h1>
-
         <h3>You can search shares in the area by different requests.</h3>
       </div>
     </div>
@@ -43,9 +42,11 @@
     <% @boxes.each do |box| %>
     <div class="container box-listing">
     <div class="row">
+      <div class="col-sm-8">
       <div class="farm-name">
-        <h3><strong><%= box.farm_id %></strong></h3>
+        <h3><strong><%= box.farm.name %></strong></h3>
         <p><%= box.name %></p>
+      </div>
       </div>
     </div>
     <div class="row">
@@ -54,17 +55,27 @@
         <p><strong>About:</strong> <%= box.description %></p>
       </div>
       <div class="col-sm-4">
-        <p><strong>Share Starts:</strong> <%= box.start_date %></p> <p><strong>Share Ends:</strong><%= box.end_date %></p>
+        <p><strong>Share Starts:</strong> <%= box.start_date.strftime("%B %e, %Y") %></p> <p><strong>Share Ends:</strong> <%= box.end_date.strftime("%B %e, %Y") %></p>
         <p><strong>Total Weeks: <%= box.length_of_time %></strong></p>
-      </div>
-      <div class="col-sm-4">
-        <h3>$<%= box.price %></h3><br>
         <p><strong>Feeds household size:</strong> <%= box.size %></p>
         <p><strong>Average produce weight:</strong> <%= box.weight %></p>
+
+      </div>
+      <div class="col-sm-4">
+        <p><strong>Pickup Locations:</strong> <%= box.pickup_location %></p>
+        <h3>$<%= box.price %></h3><br>
+        
       </div>
     </div>
     <div class="row">
-      <p><%= link_to 'Show', box %> | <%= link_to 'Edit', edit_box_path(box) %> | <%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <div class="col-sm-12">
+      <p class="pull-right"><%= link_to 'Show', box %> | <%= link_to 'Edit', edit_box_path(box) %> | <%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %>  
+
+        <%= form_tag('/add_to_cart') do %> 
+        <%= submit_tag "Add To Favorite", class: "btn btn-info" %>
+      </p>
+        <% end %> 
+    </div>
     </div>
   </div>
 <% end %>

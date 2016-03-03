@@ -11,8 +11,21 @@
 <nav class="navbar navbar-default">
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="container-fluid">
+
+        <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <li><%= link_to root_path, :class => 'navbar-brand' do %>
+          <span class="glyphicon glyphicon-grain"></span> SharedTomatos
+          <% end %></li>
+      </div>
+
+
 	      <ul class="nav navbar-nav">
-	        <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'Find a CSA', boxes_path %></li>
           <li><%= link_to 'Visit all Farms', farms_path %></li>
           <li><%= link_to 'My Favorite CSAs', view_order_path %></li>

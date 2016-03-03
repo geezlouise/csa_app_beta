@@ -14,6 +14,10 @@
  *= require_self
  */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
 /* RESET */
 
 a:hover{
@@ -55,8 +59,12 @@ p {
 	font-size: 1.2em;
 }
 
-.navbar-default .navbar-nav > li > a, .utilities > li > a {
+.navbar-default .navbar-nav > li > a, .utilities > li > a, .navbar-default .navbar-brand {
     color: #fff;
+}
+
+.navbar-default .navbar-brand {
+	font-size: 1.5em;
 }
 
 .utilities > li > a:hover {
