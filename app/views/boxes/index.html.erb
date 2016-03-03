@@ -1,40 +1,74 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Boxes</h1>
+<section id="csasearch">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h1>Find a CSA!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Contents</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Length of time</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Farm</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <h3>You can search shares in the area by different requests.</h3>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-10">
+        <div class="form-group">
+          <p>Search by Contents</p>
+          <%= search_form_for @search do |f| %>
+          <%= f.text_field :contents_cont, placeholder: "Content contains" %>
+          <%= f.submit "Search for CSA", class: "btn btn-default" %>
+          <% end %>
+        </div>
+        <div class="form-group">
+           <p>Search by Price</p>
+          <%= search_form_for @search do |f| %>
+          <%= f.text_field :price_gteq, placeholder: "Price between" %>
+          <%= f.text_field :price_lteq, placeholder: "and" %>
+          <%= f.submit "Search for CSA", class: "btn btn-default" %>
+          <% end %>
+        </div>
+        <div class="form-group">
+           <p>Search by Pickup Locations</p>
+          <%= search_form_for @search do |f| %>
+          <%= f.text_field :pickup_location_cont, placeholder: "Enter a farmer market nearby" %>
+          <%= f.submit "Search for CSA", class: "btn btn-default" %>
+          <% end %>
+        </div>
+       </div>
+    </div>
+  </div>
+</section>
 
-  <tbody>
+<section id="csa-results">
     <% @boxes.each do |box| %>
-      <tr>
-        <td><%= box.name %></td>
-        <td><%= box.contents %></td>
-        <td><%= box.description %></td>
-        <td><%= box.price %></td>
-        <td><%= box.length_of_time %></td>
-        <td><%= box.start_date %></td>
-        <td><%= box.end_date %></td>
-        <td><%= box.farm_id %></td>
-        <td><%= link_to 'Show', box %></td>
-        <td><%= link_to 'Edit', edit_box_path(box) %></td>
-        <td><%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="container box-listing">
+    <div class="row">
+      <div class="farm-name">
+        <h3><strong><%= box.farm_id %></strong></h3>
+        <p><%= box.name %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <p><strong>Contains:</strong> <%= box.contents %></p>
+        <p><strong>About:</strong> <%= box.description %></p>
+      </div>
+      <div class="col-sm-4">
+        <p><strong>Share Starts:</strong> <%= box.start_date %></p> <p><strong>Share Ends:</strong><%= box.end_date %></p>
+        <p><strong>Total Weeks: <%= box.length_of_time %></strong></p>
+      </div>
+      <div class="col-sm-4">
+        <h3>$<%= box.price %></h3><br>
+        <p><strong>Feeds household size:</strong> <%= box.size %></p>
+        <p><strong>Average produce weight:</strong> <%= box.weight %></p>
+      </div>
+    </div>
+    <div class="row">
+      <p><%= link_to 'Show', box %> | <%= link_to 'Edit', edit_box_path(box) %> | <%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  </div>
+<% end %>
+</section>
 
 <br>
 
