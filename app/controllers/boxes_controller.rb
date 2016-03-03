@@ -5,6 +5,9 @@ class BoxesController < ApplicationController
   # GET /boxes.json
   def index
     @boxes = Box.all
+
+    @search = Box.search(params[:q])
+    @boxes = @search.result
   end
 
   # GET /boxes/1
@@ -21,13 +24,15 @@ class BoxesController < ApplicationController
 
   # GET /boxes/1/edit
   def edit
+     @farms = Farm.all
   end
 
   # POST /boxes
   # POST /boxes.json
   def create
     @box = Box.new(box_params)
-
+     @farms = Farm.all
+     
     respond_to do |format|
       if @box.save
         format.html { redirect_to @box, notice: 'Box was successfully created.' }
@@ -71,6 +76,6 @@ class BoxesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def box_params
-      params.require(:box).permit(:name, :contents, :description, :price, :length_of_time, :start_date, :end_date, :farm_id)
+      params.require(:box).permit(:name, :contents, :description, :price, :length_of_time, :start_date, :end_date, :farm_id, :pickup_location)
     end
 end
