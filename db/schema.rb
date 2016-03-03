@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20160302215742) do
     t.datetime "image_updated_at"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "box_id"
+    t.integer  "farm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "line_items", force: :cascade do |t|
     t.integer  "box_id"
     t.integer  "quantity"

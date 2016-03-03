@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
+  has_many :likes
+
+  def likes?(box)
+  	box.likes.where(user_id: id).any?
+  end
 end

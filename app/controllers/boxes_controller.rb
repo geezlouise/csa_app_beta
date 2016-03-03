@@ -14,6 +14,7 @@ class BoxesController < ApplicationController
   # GET /boxes/1
   # GET /boxes/1.json
   def show
+    @likes = Like.all
   end
 
   # GET /boxes/new
