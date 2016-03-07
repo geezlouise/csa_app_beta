@@ -5,6 +5,7 @@
     <div class="row">
       <div class="col-md-10">
         <h1>Find a CSA!</h1>
+<<<<<<< HEAD
         <h3>You can search shares in the area by different requests.</h3>
       </div>
     </div>
@@ -38,16 +39,59 @@
   </div>
 </section>
 
+=======
+
+        <h3>You can search shares in the area by different requests.</h3>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-10">
+        <div class="form-group">
+          <p>Search by Contents</p>
+          <%= search_form_for @search do |f| %>
+          <%= f.text_field :contents_cont, placeholder: "Content contains" %>
+          <%= f.submit "Search for CSA", class: "btn btn-default" %>
+          <% end %>
+        </div>
+        <div class="form-group">
+           <p>Search by Price</p>
+          <%= search_form_for @search do |f| %>
+          <%= f.text_field :price_gteq, placeholder: "Price between" %>
+          <%= f.text_field :price_lteq, placeholder: "and" %>
+          <%= f.submit "Search for CSA", class: "btn btn-default" %>
+          <% end %>
+        </div>
+        <div class="form-group">
+           <p>Search by Pickup Locations</p>
+          <%= search_form_for @search do |f| %>
+          <%= f.text_field :pickup_location_cont, placeholder: "Enter a farmer market nearby" %>
+          <%= f.submit "Search for CSA", class: "btn btn-default" %>
+          <% end %>
+        </div>
+       </div>
+    </div>
+  </div>
+</section>
+
+>>>>>>> 7dca33372affa9d0d1b147afe8164324d2120473
 <section id="csa-results">
     <% @boxes.each do |box| %>
     <div class="container box-listing">
     <div class="row">
+<<<<<<< HEAD
       <div class="col-sm-8">
       <div class="farm-name">
         <h3><strong><%= box.farm.name %></strong></h3>
         <p><%= box.name %></p>
       </div>
       </div>
+=======
+      <div class="farm-name">
+        <h3><strong><%= box.farm_id %></strong></h3>
+        <p><%= box.name %></p>
+      </div>
+>>>>>>> 7dca33372affa9d0d1b147afe8164324d2120473
     </div>
     <div class="row">
       <div class="col-sm-4">
@@ -55,6 +99,7 @@
         <p><strong>About:</strong> <%= box.description %></p>
       </div>
       <div class="col-sm-4">
+<<<<<<< HEAD
         <p><strong>Share Starts:</strong> <%= box.start_date.strftime("%B %e, %Y") %></p> <p><strong>Share Ends:</strong> <%= box.end_date.strftime("%B %e, %Y") %></p>
         <p><strong>Total Weeks: <%= box.length_of_time %></strong></p>
         <p><strong>Feeds household size:</strong> <%= box.size %></p>
@@ -76,6 +121,19 @@
       </p>
         <% end %> 
     </div>
+=======
+        <p><strong>Share Starts:</strong> <%= box.start_date %></p> <p><strong>Share Ends:</strong><%= box.end_date %></p>
+        <p><strong>Total Weeks: <%= box.length_of_time %></strong></p>
+      </div>
+      <div class="col-sm-4">
+        <h3>$<%= box.price %></h3><br>
+        <p><strong>Feeds household size:</strong> <%= box.size %></p>
+        <p><strong>Average produce weight:</strong> <%= box.weight %></p>
+      </div>
+    </div>
+    <div class="row">
+      <p><%= link_to 'Show', box %> | <%= link_to 'Edit', edit_box_path(box) %> | <%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+>>>>>>> 7dca33372affa9d0d1b147afe8164324d2120473
     </div>
   </div>
 <% end %>

@@ -8,6 +8,10 @@ class BoxesController < ApplicationController
 
     @search = Box.search(params[:q])
     @boxes = @search.result
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7dca33372affa9d0d1b147afe8164324d2120473
   end
 
   # GET /boxes/1
